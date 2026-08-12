@@ -10,13 +10,17 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -46,23 +50,24 @@ fun InitialScreen(){
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.Cyan)
     ){
         Column(
             modifier = Modifier
                 .padding(16.dp)
-                .fillMaxSize()
-                .background(color = Color.Green)
+                .fillMaxWidth()
+                .align(Alignment.Center),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
                 painter = painterResource(R.drawable.chef),
                 contentDescription = "Imagem de um Chef de cozinha",
+                modifier = Modifier
+                    .size(190.dp)
             )
+            Spacer(modifier = Modifier.height(100.dp))
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    //.height(200.dp)
-                    .background(color = Color.Yellow)
             ) {
                 Text(
                     text = "UNLIMITED PREMIUM RECIPES",
@@ -75,7 +80,9 @@ fun InitialScreen(){
                     fontSize = 64.sp,
                     lineHeight = 64.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFFED1459)
+                    color = Color(0xFFED1459),
+                    modifier = Modifier
+                        .padding(top = 8.dp, bottom = 16.dp)
                 )
                 Row() {
                     Button(
@@ -85,7 +92,7 @@ fun InitialScreen(){
                                 containerColor = Color(0xFFED1459)
                             ),
                         border = BorderStroke(
-                            width = 4.dp,
+                            width = 1.dp,
                             color = Color(0xFFFFC107)
                         ),
                         modifier = Modifier
@@ -98,6 +105,7 @@ fun InitialScreen(){
                             fontSize = 16.sp
                         )
                     }
+                    Spacer(modifier = Modifier.width(8.dp))
                     Button(
                         onClick = {},
                         colors = ButtonDefaults
@@ -126,7 +134,7 @@ fun InitialScreen(){
 }
 
 @Composable
-@Preview
+@Preview(showBackground = true, showSystemUi = true)
 fun InitialScreenPreview(){
     RecipesTheme() {
         InitialScreen()
