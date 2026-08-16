@@ -1,5 +1,6 @@
 package br.com.fiap.recipes
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -23,6 +24,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -52,6 +54,9 @@ fun InitialScreen(){
     Box(
         modifier = Modifier
             .fillMaxSize()
+            .background(
+                color = MaterialTheme.colorScheme.background
+            )
     ){
         //Card do topEnd
         Card(
@@ -60,7 +65,10 @@ fun InitialScreen(){
                 .height(85.dp)
                 .align(Alignment.TopEnd),
             shape = RoundedCornerShape(bottomStart = 85.dp),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFFED1459))
+            colors = CardDefaults
+                .cardColors(
+                    containerColor = MaterialTheme.colorScheme.primary
+            )
         ){}
 
         //Card do bottomStart
@@ -70,7 +78,9 @@ fun InitialScreen(){
                 .height(85.dp)
                 .align(Alignment.BottomStart),
             shape = RoundedCornerShape(topEnd = 85.dp),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFFED1459))
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.primary
+            )
         ){}
 
         Column(
@@ -94,7 +104,7 @@ fun InitialScreen(){
                 Text(
                     text = "UNLIMITED PREMIUM RECIPES",
                     fontSize = 16.sp,
-                    color = Color(0xFF868080),
+                    color = MaterialTheme.colorScheme.secondary,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
@@ -102,7 +112,7 @@ fun InitialScreen(){
                     fontSize = 64.sp,
                     lineHeight = 64.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFFED1459),
+                    color = MaterialTheme.colorScheme.primary,
                     modifier = Modifier
                         .padding(top = 8.dp, bottom = 16.dp)
                 )
@@ -111,18 +121,18 @@ fun InitialScreen(){
                         onClick = {},
                         colors = ButtonDefaults
                             .buttonColors(
-                                containerColor = Color(0xFFED1459)
+                                containerColor = MaterialTheme.colorScheme.primary
                             ),
                         border = BorderStroke(
                             width = 1.dp,
-                            color = Color(0xFFFFC107)
+                            color = MaterialTheme.colorScheme.tertiary
                         ),
                         modifier = Modifier
                             .size(width = 128.dp, height = 48.dp)
                     ) {
                         Text(
                             text = "Login",
-                            color = Color(0xFFFFFFFF),
+                            color = MaterialTheme.colorScheme.onPrimary,
                             fontWeight = FontWeight.Bold,
                             fontSize = 16.sp
                         )
@@ -132,18 +142,18 @@ fun InitialScreen(){
                         onClick = {},
                         colors = ButtonDefaults
                             .buttonColors(
-                                containerColor = Color(0xFFFFC107)
+                                containerColor = MaterialTheme.colorScheme.tertiary
                             ),
                         border = BorderStroke(
                             width = 1.dp,
-                            color = Color(0xFFED1459)
+                            color = MaterialTheme.colorScheme.primary
                         ),
                         modifier = Modifier
                             .size(width = 128.dp, height = 48.dp)
                     ) {
                         Text(
                             text = "Sign up",
-                            color = Color(0xFFED1459),
+                            color = MaterialTheme.colorScheme.onTertiary,
                             fontWeight = FontWeight.Bold,
                             fontSize = 16.sp
                         )
@@ -156,7 +166,7 @@ fun InitialScreen(){
 }
 
 @Composable
-@Preview(showBackground = true, showSystemUi = true)
+@Preview(showBackground = true, showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 fun InitialScreenPreview(){
     RecipesTheme() {
         InitialScreen()
