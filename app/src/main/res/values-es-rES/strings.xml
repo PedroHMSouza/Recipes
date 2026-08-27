@@ -4,4 +4,15 @@
     <string name="unlimited_recipes">RECETAS PREMIUM ILIMITADAS</string>
     <string name="button_login">Acceder</string>
     <string name="button_signup">Registrarse</string>
+    <string name="sign_up">Registrarse</string>
+    <string name="create_account">Crear una cuenta nueva</string>
+    <string name="user_image">Imagen de usuario</string>
+    <string name="camera_icon">Icono de cámara</string>
+    <string name="your_name">Your name</string>
+    <string name="person_icon">Person icon</string>
+    <string name="your_e_mail">Your e-mail</string>
+    <string name="mail_icon">Mail icon</string>
+    <string name="your_password">Your password</string>
+    <string name="password_icon">Password icon</string>
+    <string name="show_password_icon">Show password icon</string>
 </resources>
